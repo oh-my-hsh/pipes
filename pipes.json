@@ -1,0 +1,81 @@
+{
+    "$schema": "https://oh-my-hsh.navii.online/schemas/pipes-v1.json",
+    "version": 1,
+    "pipes": [
+        {
+            "id": "flux-eye",
+            "name": "flux-eye",
+            "description": "High-speed filesystem scanner. Streams directory structure as Flux Protocol signals.",
+            "author": "takakix2",
+            "author_url": "https://github.com/takakix2",
+            "repo": "oh-my-hsh/pipes",
+            "bin_name": "flux-eye",
+            "tags": [
+                "filesystem",
+                "scanner",
+                "official"
+            ],
+            "min_hsh_version": "0.1.0"
+        },
+        {
+            "id": "flux-grep",
+            "name": "flux-grep",
+            "description": "Fast signal extraction from NDJSON streams. Filter and search structured data at speed.",
+            "author": "takakix2",
+            "author_url": "https://github.com/takakix2",
+            "repo": "oh-my-hsh/pipes",
+            "bin_name": "flux-grep",
+            "tags": [
+                "search",
+                "filter",
+                "official"
+            ],
+            "min_hsh_version": "0.1.0"
+        },
+        {
+            "id": "flux-render",
+            "name": "flux-render",
+            "description": "Universal format converter. Converts between NDJSON, Markdown, CSV, YAML, and JSON.",
+            "author": "takakix2",
+            "author_url": "https://github.com/takakix2",
+            "repo": "oh-my-hsh/pipes",
+            "bin_name": "flux-render",
+            "tags": [
+                "converter",
+                "format",
+                "official"
+            ],
+            "min_hsh_version": "0.1.0"
+        },
+        {
+            "id": "filter-json",
+            "name": "filter-json",
+            "description": "Filter NDJSON streams by keyword. Lightweight jq alternative for Flux Protocol pipelines.",
+            "author": "takakix2",
+            "author_url": "https://github.com/takakix2",
+            "repo": "oh-my-hsh/pipes",
+            "bin_name": "filter-json",
+            "tags": [
+                "filter",
+                "json",
+                "official"
+            ],
+            "min_hsh_version": "0.1.0"
+        },
+        {
+            "id": "json-to-table",
+            "name": "json-to-table",
+            "description": "Render NDJSON streams as formatted ASCII tables. Human-readable output for Flux Protocol data.",
+            "author": "takakix2",
+            "author_url": "https://github.com/takakix2",
+            "repo": "oh-my-hsh/pipes",
+            "bin_name": "json-to-table",
+            "tags": [
+                "display",
+                "table",
+                "official"
+            ],
+            "min_hsh_version": "0.1.0"
+        }
+    ]
+}
