@@ -1,0 +1,12 @@
+{
+    "name": "json-to-table",
+    "version": "0.1.0",
+    "description": "Render NDJSON streams as formatted ASCII tables. Human-readable output for Flux Protocol data.",
+    "author": "takakix2",
+    "license": "MIT",
+    "runtime": "python3",
+    "entry": "json-to-table",
+    "tags": ["display", "table", "official"],
+    "min_hsh_version": "0.1.0",
+    "usage": "cat data.ndjson | json-to-table"
+}

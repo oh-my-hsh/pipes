@@ -1,0 +1,12 @@
+{
+    "name": "flux-render",
+    "version": "0.1.0",
+    "description": "Universal format converter for Flux Protocol signals. Converts between NDJSON, Markdown, CSV, YAML, and JSON.",
+    "author": "takakix2",
+    "license": "MIT",
+    "runtime": "python3",
+    "entry": "flux-render",
+    "tags": ["converter", "format", "markdown", "csv", "official"],
+    "min_hsh_version": "0.1.0",
+    "usage": "flux-eye -p . | flux-render --to md"
+}

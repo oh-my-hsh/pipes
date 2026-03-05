@@ -1,0 +1,12 @@
+{
+    "name": "filter-json",
+    "version": "0.1.0",
+    "description": "Filter NDJSON streams by keyword. Lightweight jq alternative for Flux Protocol pipelines.",
+    "author": "takakix2",
+    "license": "MIT",
+    "runtime": "python3",
+    "entry": "filter-json",
+    "tags": ["filter", "json", "official"],
+    "min_hsh_version": "0.1.0",
+    "usage": "flux-eye -p . | filter-json --keyword \".rs\""
+}

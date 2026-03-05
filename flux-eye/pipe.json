@@ -1,0 +1,12 @@
+{
+    "name": "flux-eye",
+    "version": "0.1.0",
+    "description": "High-speed filesystem scanner. Streams directory structure as Flux Protocol NDJSON signals.",
+    "author": "takakix2",
+    "license": "MIT",
+    "runtime": "binary",
+    "entry": "flux-eye",
+    "tags": ["filesystem", "scanner", "official"],
+    "min_hsh_version": "0.1.0",
+    "usage": "flux-eye -p ~/project"
+}

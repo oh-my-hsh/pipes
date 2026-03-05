@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+import json
+import sys
+import argparse
+
+def main():
+    parser = argparse.ArgumentParser(description='Filter JSON stream by keyword')
+    parser.add_argument('--keyword', type=str, default=None, help='Keyword to filter titles (case-insensitive)')
+    args = parser.parse_args()
+
+    # stdinから1行ずつ読み込む（ストリーム処理）
+    for line in sys.stdin:
+        try:
+            line = line.strip()
+            if not line:
+                continue
+                
+            item = json.loads(line)
+            
+            # フィルタリングロジック
+            # タイトルまたはサマリーにキーワードが含まれるか
+            # v1プロトコルの場合はトップレベルのフィールドを、そうでない場合は全体を対象にする
+            target_text = ""
+            if item.get("v") == 1:
+                target_text = (item.get("title", "") + " " + item.get("summary", "")).lower()
+            else:
+                target_text = line.lower()
+
+            # キーワードが指定されていない場合はすべて通す
+            if not args.keyword:
+                print(json.dumps(item, ensure_ascii=False), flush=True)
+                continue
+
+            keyword = args.keyword.lower()
+            
+            if keyword in target_text:
+                # 出力ノード名を更新（必要なら）
+                if item.get("v") == 1:
+                    item["source"] = f"{item.get('source', 'unknown')}->filter"
+                
+                try:
+                    print(json.dumps(item, ensure_ascii=False), flush=True)
+                except BrokenPipeError:
+                    sys.stdout = None
+                    sys.exit(0)
+                
+        except json.JSONDecodeError:
+            print(f"Skipping invalid JSON: {line[:50]}...", file=sys.stderr)
+            continue
+        except Exception as e:
+            print(f"Error processing line: {e}", file=sys.stderr)
+            continue
+
+if __name__ == "__main__":
+    main()
